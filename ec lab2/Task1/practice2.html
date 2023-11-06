@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #dummyText {
+            border-width: 2px;
+            border-style: solid;
+        }
+    </style>
+</head>
+
+<body>
+
+<p id="dummyText">Hello World</p>
+
+<label for="borderColorInput">Enter RGB values for Border color (e.g., 255,0,0 for red):</label><br>
+<input type="text" id="borderColorInput" name="borderColorInput"><br>
+
+<label for="backgroundColorInput">Enter RGB values for Background color (e.g., 0,255,0 for green):</label><br>
+<input type="text" id="backgroundColorInput" name="backgroundColorInput"><br>
+
+<label for="borderWidth">Enter border width (in px):</label><br>
+<input type="text" id="borderWidth" name="borderWidth"><br>
+
+<button onclick="changeStyle()">Apply changes</button>
+
+<script>
+function changeStyle() {
+    var borderColor = document.getElementById("borderColorInput").value;
+    var backgroundColor = document.getElementById("backgroundColorInput").value;
+    var borderWidth = document.getElementById("borderWidth").value;
+
+    var textElement = document.getElementById("dummyText");
+
+    textElement.style.backgroundColor = "rgb(" + backgroundColor + ")";
+    textElement.style.borderColor = "rgb(" + borderColor + ")";
+    textElement.style.borderWidth = borderWidth + "px";
+}
+</script>
+
+</body>
+</html>

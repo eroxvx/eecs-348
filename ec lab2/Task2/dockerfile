@@ -1,0 +1,14 @@
+# Set the base image to use
+FROM gcc:latest
+
+# Copy the C program into the container
+COPY lab03.c .
+
+# Copy the input.txt into the container
+COPY input.txt .
+
+# Compile the C program
+RUN gcc -o lab03 lab03.c
+
+# Set the command to run when the container starts
+CMD ["./lab03"]
